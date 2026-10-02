@@ -33,18 +33,44 @@ button{font:inherit;color:var(--ink);cursor:pointer}
 .cards{display:flex;flex-direction:column;gap:10px;width:min(360px,100%)}
 .card{transition:transform .1s;background:var(--panel);border:2px solid var(--cat);border-radius:14px;padding:10px 14px;text-align:left}
 .card:active{transform:scale(.97)}.card b{font-size:20px}.card span{opacity:.8;font-size:15px}
-.card:focus-visible,.go:focus-visible,.rr:focus-visible,.chip:focus-visible,.row:focus-visible{outline:3px solid var(--xp);outline-offset:2px}
+.card:focus-visible,.go:focus-visible,.rr:focus-visible,.opt:focus-visible,.ic:focus-visible,.tabs button:focus-visible,.row:focus-visible{outline:3px solid var(--xp);outline-offset:2px}
 .rr{background:none;border:2px dashed var(--xp);border-radius:12px;padding:6px 16px}
 .rr:disabled{opacity:.4;cursor:default}
 .card .h{display:flex;justify-content:space-between;align-items:center;gap:8px}.card small{display:block;color:var(--xp);font-size:14px}.card em{font-style:normal;font-size:13px;white-space:nowrap}
 .tl{display:flex;gap:8px;margin-top:6px}.tl button{font-size:13px;background:rgba(0,0,0,.3);border:1px solid #556;border-radius:8px;padding:2px 8px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.chip{background:var(--panel);border:2px solid var(--xp);border-radius:12px;padding:3px 10px;font-size:15px}
-.chip.on{background:var(--cat);color:#2a1700;border-color:var(--cat)}.chip.lk{opacity:.7;border-style:dashed}
-.tabs{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}.tabs button{background:rgba(0,0,0,.3);border:1px solid #556;border-radius:10px;padding:3px 10px;font-size:14px}.tabs .on{background:var(--xp);color:#10201d}
-.panel{width:100%;display:flex;flex-direction:column;gap:6px;text-align:left;max-height:32vh;overflow:auto;touch-action:pan-y}
-.row{position:relative;text-align:left;background:var(--panel);border:1px solid var(--xp);border-radius:10px;padding:6px 10px;display:block;width:100%}
-.row:disabled{opacity:.5;cursor:default}.row em{position:absolute;right:10px;top:8px;font-style:normal;color:#ffd24a;font-size:14px}.row span{font-size:13px;opacity:.8}.row small{opacity:.7}
+#start{background:radial-gradient(ellipse at 50% 0,rgba(255,157,66,.16),transparent 55%),rgba(10,16,20,.93)}
+#start>.in{max-width:560px;gap:18px;align-items:stretch}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pill{background:var(--panel);border:2px solid #ffd24a;color:#ffd24a;border-radius:99px;padding:4px 14px;font-weight:700;font-size:16px;max-width:none}
+.ic{width:42px;height:42px;border-radius:50%;background:var(--panel);border:2px solid rgba(246,239,224,.3);font-size:18px;padding:0}
+.hero{text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
+.logo{font-size:56px;line-height:1;filter:drop-shadow(0 4px 12px rgba(255,157,66,.5))}
+.hero h1{font-size:46px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.tag{opacity:.8;font-size:15px;max-width:none}
+.sec{display:flex;flex-direction:column;gap:8px;text-align:left}
+.sec h3{margin:0;font-size:18px;display:flex;align-items:center;gap:8px}
+.sec h3 span{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--cat);color:#2a1700;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:8px}
+.opt{display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--panel);border:2px solid rgba(95,209,196,.35);border-radius:14px;padding:10px 6px 8px;text-align:center;transition:transform .1s,border-color .15s}
+.opt:active{transform:scale(.97)}
+.opt .oe{font-size:32px;line-height:1.1}.opt b{font-size:16px}
+.opt small{flex:1;font-size:12px;opacity:.75;line-height:1.25}
+.opt em{font-style:normal;font-size:12px;margin-top:6px;padding:1px 9px;border-radius:99px;background:rgba(0,0,0,.3)}
+.opt.on{border-color:var(--cat);background:linear-gradient(180deg,rgba(255,157,66,.22),var(--panel))}
+.opt.on em{background:var(--cat);color:#2a1700;font-weight:700}
+.opt.lk{opacity:.7;border-style:dashed}.opt.lk.can{opacity:1;border-color:#ffd24a}.opt.lk.can em{color:#ffd24a}
+.sum{background:rgba(0,0,0,.3);border-radius:12px;padding:10px 14px;text-align:center;font-size:14px;line-height:1.5;white-space:normal}
+.sum b{color:var(--cat);font-size:16px}
+.how{background:rgba(0,0,0,.25);border-radius:12px;padding:10px 14px;text-align:left;font-size:14px}
+.how summary{cursor:pointer;font-weight:700}.how ul{margin:8px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px;opacity:.9}
+.dock{position:sticky;bottom:0;margin:0 -16px -16px;padding:14px 16px max(16px,env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,rgba(10,16,20,.96) 35%)}
+.dock .go{width:100%;font-size:26px;padding:14px;box-shadow:0 4px 0 #b8691f}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:rgba(0,0,0,.3);padding:4px;border-radius:12px}
+.tabs button{background:none;border:0;border-radius:9px;padding:7px 2px;font-size:13px}.tabs .on{background:var(--xp);color:#10201d;font-weight:700}
+.panel{width:100%;display:flex;flex-direction:column;gap:6px;text-align:left}
+.row{position:relative;text-align:left;background:var(--panel);border:1px solid rgba(95,209,196,.45);border-radius:12px;padding:8px 12px;display:block;width:100%}
+.row:disabled{opacity:.5;cursor:default}.row em{position:absolute;right:12px;top:8px;font-style:normal;color:#ffd24a;font-size:14px;font-weight:700}.row span{font-size:13px;opacity:.8}.row small{opacity:.7}
+.pg{display:block;height:5px;border-radius:3px;background:rgba(0,0,0,.35);margin-top:6px;overflow:hidden}.pg i{display:block;height:100%;background:var(--xp)}
 .li{padding:5px 9px;background:rgba(0,0,0,.25);border-radius:8px;font-size:14px}.li.ok{border-left:3px solid #ffd24a}
 .ab{position:fixed;right:max(16px,env(safe-area-inset-right));width:76px;height:76px;border-radius:50%;border:3px solid var(--cat);background:rgba(37,57,74,.92);font-size:26px;display:none;line-height:1.1}
 .ab:disabled{opacity:.7}
@@ -63,19 +89,46 @@ button{font:inherit;color:var(--ink);cursor:pointer}
 </div>
 <div id="toast"></div>
 <div class="ov" id="start"><div class="in">
-  <h1>Mèo diệt gián</h1>
-  <p>Mèo tự tấn công. Kéo ngón tay (hoặc WASD) để chạy, Space/E và Q dùng kỹ năng, P tạm dừng. Sống sót 3 phút rồi hạ Gián Chúa.</p>
-  <p id="coin"></p>
-  <div class="chips" id="catc"></div>
-  <div class="chips" id="mapc"></div>
-  <div class="chips" id="difc"></div>
-  <p id="info"></p>
-  <div class="tabs" id="tabs">
-    <button data-t="shop">Nâng cấp</button><button data-t="mis">Nhiệm vụ</button><button data-t="ach">Thành tựu</button><button data-t="rec">Kỷ lục</button>
+  <div class="top">
+    <p id="coin" class="pill"></p>
+    <button class="ic" id="mute" aria-label="Bật/tắt âm thanh"></button>
   </div>
-  <div class="panel" id="panel"></div>
-  <button class="go" id="play">Chơi</button>
-  <button class="rr" id="mute">🔊 Âm thanh: bật</button>
+  <div class="hero">
+    <div class="logo">🐱</div>
+    <h1>Mèo diệt gián</h1>
+    <p class="tag">Sống sót 3 phút và hạ Gián Chúa!</p>
+  </div>
+  <section class="sec">
+    <h3><span>1</span>Chọn mèo</h3>
+    <div class="grid" id="catc"></div>
+  </section>
+  <section class="sec">
+    <h3><span>2</span>Chọn bản đồ</h3>
+    <div class="grid" id="mapc"></div>
+  </section>
+  <section class="sec">
+    <h3><span>3</span>Chọn độ khó</h3>
+    <div class="grid" id="difc"></div>
+  </section>
+  <div class="sum" id="info"></div>
+  <section class="sec">
+    <h3>Cửa hàng &amp; tiến trình</h3>
+    <div class="tabs" id="tabs">
+      <button data-t="shop">🛒 Nâng cấp</button><button data-t="mis">📅 Nhiệm vụ</button><button data-t="ach">🏆 Thành tựu</button><button data-t="rec">📊 Kỷ lục</button>
+    </div>
+    <div class="panel" id="panel"></div>
+  </section>
+  <details class="how">
+    <summary>❓ Cách chơi</summary>
+    <ul>
+      <li>👆 <b>Di chuyển:</b> kéo ngón tay trên màn hình (hoặc phím WASD). Mèo tự tấn công.</li>
+      <li>🐟 <b>Lên cấp:</b> nhặt cá do gián rơi để lấy XP, mỗi lần lên cấp chọn 1 thẻ.</li>
+      <li>⚡ <b>Kỹ năng chủ động:</b> Space/E và Q (hoặc bấm nút tròn trên điện thoại).</li>
+      <li>⏸ <b>Tạm dừng:</b> phím P hoặc nút ⏸ góc phải.</li>
+      <li>🏁 <b>Mục tiêu:</b> sống sót 3 phút rồi hạ Gián Chúa để thắng và nhận thêm xu.</li>
+    </ul>
+  </details>
+  <div class="dock"><button class="go" id="play">▶ Chơi</button></div>
 </div></div>
 <div class="ov off" id="lvl"><div class="in">
   <h2 id="lt">Lên cấp! Chọn 1 thẻ</h2>
@@ -139,7 +192,7 @@ const TY={ // hp, tốc độ, bán kính, kích cỡ, sát thương chạm, s�
 };
 const CATS={
  cam:{n:'Mèo cam',e:'🐱',d:'Mèo cam: cân bằng.',cost:0,pal:{b:'#ff9d42',t:'#e8842a',bl:'#ffe1b8',ey:'#2a1700'}},
- den:{n:'Mèo đen',e:'🐈‍⬛',d:'Mèo đen: 15% chí mạng ×2, máu -10.',cost:150,crit:.15,pal:{b:'#3e3e50',t:'#2c2c3a',bl:'#6a6a80',ey:'#ffd24a'}},
+ den:{n:'Mèo đen',e:'🐈',d:'Mèo đen: 15% chí mạng ×2, máu -10.',cost:150,crit:.15,pal:{b:'#3e3e50',t:'#2c2c3a',bl:'#6a6a80',ey:'#ffd24a'}},
  tam:{n:'Mèo tam thể',e:'😸',d:'Mèo tam thể: +25% XP, +5% cá vàng, chạy chậm 5%.',cost:200,pal:{b:'#f4ecd8',t:'#e8842a',bl:'#fff6e4',ey:'#2a1700'}}
 };
 const MAPS={
@@ -147,7 +200,7 @@ const MAPS={
  kho:{n:'Nhà kho',e:'📦',d:'Nhà kho: gián tank đến sớm (1:20), +20% xu.',cost:250,bg:'#2b241b',tile:'rgba(255,220,160,.045)',tank:80,spi:75,sp:1,coin:1.2},
  cong:{n:'Cống ngầm',e:'🕳️',d:'Cống ngầm: gián nhanh hơn 15%, nhện sớm, +30% xu.',cost:400,bg:'#14302b',tile:'rgba(120,255,220,.04)',tank:120,spi:50,sp:1.15,coin:1.3}
 };
-const DIFF={1:{n:'Thường',e:'⭐',hp:1,sp:1,dm:1,coin:1,d:'Thường'},2:{n:'Khó',e:'⭐⭐',hp:1.4,sp:1.25,dm:1.2,coin:1.5,d:'Khó: gián trâu 1.4×, đông 1.25×, xu ×1.5'},3:{n:'Ác mộng',e:'💀',hp:1.9,sp:1.5,dm:1.5,coin:2,d:'Ác mộng: gián trâu 1.9×, đông 1.5×, xu ×2'}};
+const DIFF={1:{n:'Thường',e:'⭐',hp:1,sp:1,dm:1,coin:1,d:'Thường: luật chuẩn'},2:{n:'Khó',e:'⭐⭐',hp:1.4,sp:1.25,dm:1.2,coin:1.5,d:'Khó: gián trâu 1.4×, đông 1.25×, xu ×1.5'},3:{n:'Ác mộng',e:'💀',hp:1.9,sp:1.5,dm:1.5,coin:2,d:'Ác mộng: gián trâu 1.9×, đông 1.5×, xu ×2'}};
 const UPG={
  hp:{n:'Mèo khỏe',d:'+10 máu tối đa mỗi bậc',max:8,cost:l=>40+30*l},
  dmg:{n:'Vuốt luyện',d:'+5% sát thương mỗi bậc',max:10,cost:l=>50+40*l},
@@ -605,27 +658,29 @@ function loop(now){
 }
 
 /* ---------- 7. MENU / META ---------- */
-function mutebtn(){const t=M.mute?'🔇 Âm thanh: tắt':'🔊 Âm thanh: bật';$('mute').textContent=t;$('mute2').textContent=t}
+function mutebtn(){const t=M.mute?'🔇 Âm thanh: tắt':'🔊 Âm thanh: bật';$('mute').textContent=M.mute?'🔇':'🔊';$('mute').title=t;$('mute2').textContent=t}
 function toggleMute(){M.mute=M.mute?0:1;if(!M.mute)au();sv();mutebtn()}
-function chipRow(id,list,cur,isOpen,costOf,choose){
+function chipRow(id,list,cur,isOpen,lockOf,choose){
   const b=$(id);b.innerHTML='';
-  for(const k in list){const o=list[k],op=isOpen(k),c=document.createElement('button');c.className='chip'+(String(cur)==k?' on':'')+(op?'':' lk');
-    c.textContent=(op?'':'🔒 ')+o.e+' '+o.n+(op&&String(cur)!=k||op?'':costOf(k));
+  for(const k in list){const o=list[k],op=isOpen(k),on=String(cur)==k,lk=op?null:lockOf(k),c=document.createElement('button');
+    c.className='opt'+(on?' on':'')+(op?'':' lk'+(lk[1]?' can':''));c.setAttribute('aria-pressed',on);
+    c.innerHTML='<span class="oe">'+o.e+'</span><b>'+o.n+'</b><small>'+o.d.replace(/^[^:]*:\s*/,'')+'</small><em>'+(on?'✓ Đang chọn':op?'Đã mở':lk[0])+'</em>';
     c.onclick=()=>choose(k,op);b.appendChild(c)}}
 function menu(){
   const sel=M.sel;
-  $('coin').textContent='🐟 Xu cá: '+M.c;
-  chipRow('catc',CATS,sel.cat,k=>M.cats[k],k=>' · '+CATS[k].cost+' xu',(k,op)=>{if(!op){if(M.c<CATS[k].cost)return;M.c-=CATS[k].cost;M.cats[k]=1}sel.cat=k;sv();menu()});
-  chipRow('mapc',MAPS,sel.map,k=>M.maps[k],k=>' · '+MAPS[k].cost+' xu',(k,op)=>{if(!op){if(M.c<MAPS[k].cost)return;M.c-=MAPS[k].cost;M.maps[k]=1}sel.map=k;sv();menu()});
-  chipRow('difc',DIFF,sel.diff,k=>+k<=M.diff,k=>' · thắng độ khó trước',(k,op)=>{if(op){sel.diff=+k;sv();menu()}});
-  $('info').textContent=CATS[sel.cat].d+'\n'+MAPS[sel.map].d+'\n'+DIFF[sel.diff].d;
+  $('coin').textContent='🐟 '+M.c+' xu';
+  chipRow('catc',CATS,sel.cat,k=>M.cats[k],k=>['🔒 '+CATS[k].cost+' 🐟',M.c>=CATS[k].cost],(k,op)=>{if(!op){if(M.c<CATS[k].cost)return;M.c-=CATS[k].cost;M.cats[k]=1}sel.cat=k;sv();menu()});
+  chipRow('mapc',MAPS,sel.map,k=>M.maps[k],k=>['🔒 '+MAPS[k].cost+' 🐟',M.c>=MAPS[k].cost],(k,op)=>{if(!op){if(M.c<MAPS[k].cost)return;M.c-=MAPS[k].cost;M.maps[k]=1}sel.map=k;sv();menu()});
+  chipRow('difc',DIFF,sel.diff,k=>+k<=M.diff,k=>['🔒 Thắng độ khó trước',false],(k,op)=>{if(op){sel.diff=+k;sv();menu()}});
+  const C=CATS[sel.cat],Mp=MAPS[sel.map],D=DIFF[sel.diff];
+  $('info').innerHTML='<b>'+C.e+' '+C.n+' · '+Mp.e+' '+Mp.n+' · '+D.e+' '+D.n+'</b><br>Xu thưởng mỗi ván: ×'+(+(Mp.coin*D.coin).toFixed(2));
   for(const b of $('tabs').children)b.className=b.dataset.t==M.tab?'on':'';
   panel();mutebtn()}
 function panel(){
   const p=$('panel');p.innerHTML='';
   if(M.tab=='shop'){
     for(const k in UPG){const u=UPG[k],l=U(k),cost=u.cost(l),b=document.createElement('button');b.className='row';b.disabled=l>=u.max||M.c<cost;
-      b.innerHTML='<b>'+u.n+'</b> <small>'+l+'/'+u.max+'</small><br><span>'+u.d+'</span><em>'+(l>=u.max?'Tối đa':cost+' xu')+'</em>';
+      b.innerHTML='<b>'+u.n+'</b> <small>'+l+'/'+u.max+'</small><br><span>'+u.d+'</span><em>'+(l>=u.max?'Tối đa':'🐟 '+cost)+'</em><i class="pg"><i style="width:'+100*l/u.max+'%"></i></i>';
       b.onclick=()=>{if(M.c>=cost&&l<u.max){M.c-=cost;M.u[k]=l+1;sv();menu()}};p.appendChild(b)}}
   else if(M.tab=='mis'){
     for(const x of todayMis()){const d=document.createElement('div'),dn=M.dly.done[x.m.id],pr=Math.min(M.dly.p[x.m.id]||0,x.t);
